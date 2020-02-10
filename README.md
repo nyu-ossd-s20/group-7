@@ -1,6 +1,5 @@
-# group-7
+# Word to Zoo
 Browser Extension for group 7
 
-Will update the repo name once we think of one.
 
-This extension finds any instance of a certain word (which one?) on a webpage and converts it into an inline picture. Who needs reading?
+This extension finds any instance of the words Bear, Duck, or Dog on a webpage and converts it into a nice inline picture. Now your webpages will feel like a fun zoo experience with more images! Who needs reading?
