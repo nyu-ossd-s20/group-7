@@ -11,11 +11,22 @@
     "48": "icons/dog-icon.png"
   },
 
+  "permissions": [
+    "activeTab"
+  ],
+
+  "web_accessible_resources": [
+    "images/cat.svg",
+    "images/dog.svg"
+  ],
+
   "content_scripts": [
     {
       "matches": ["*://*/*"],
       "js": ["word-to-pet.js"]
     }
   ]
+
+
 
 }
