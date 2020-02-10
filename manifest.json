@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Word To Pet",
+  "version": "1.0",
+
+  "description": "Replaces the words 'Dog' and 'Cat' on a webpage with their cute image counterparts.",
+  "homepage_url": "https://github.com/nyu-ossd-s20/word-to-pet",
+
+  "icons": {
+    "48": "icons/dog-icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["word-to-pet.js"]
+    }
+  ]
+
+}
