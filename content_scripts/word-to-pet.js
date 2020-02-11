@@ -14,7 +14,7 @@
    * create and style an IMG node pointing to
    * that image, then insert the node into the document.
    */
-  function removeInstances(beastURL) {
+  function removeInstances(petURL) {
     document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
   }
 
