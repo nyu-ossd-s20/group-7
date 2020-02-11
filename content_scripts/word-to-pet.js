@@ -15,7 +15,8 @@
    * that image, then insert the node into the document.
    */
   function removeInstances(petURL) {
-    document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
+    /*document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');*/
+    console.log(petURL);
   }
 
 

@@ -20,6 +20,12 @@
     "images/dog.svg"
   ],
 
+    "browser_action": {
+    "default_icon": "icons/dog-icon.png",
+    "default_title": "word_to_pet",
+    "default_popup": "popup/choose_pet.html"
+  },
+
   "content_scripts": [
     {
       "matches": ["*://*/*"],
