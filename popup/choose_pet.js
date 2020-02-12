@@ -32,6 +32,13 @@ function listenForClicks() {
 
         });
     }
+    function reset(tabs) {
+      browser.tabs.sendMessage(tabs[0].id, {
+        command: "reset",
+        catURL: browser.extension.getURL("images/cat.svg"),
+        dogURL: browser.extension.getURL("images/dog.svg")
+      });
+    }
 
     /**
      * Just log the error to the console.
@@ -48,7 +55,13 @@ function listenForClicks() {
       browser.tabs.query({active: true, currentWindow: true})
         .then(petify)
         .catch(reportError);
+    }else if (e.target.classList.contains("reset")) {
+      browser.tabs.query({active: true, currentWindow: true})
+        .then(reset)
+        .catch(reportError);
     }
+
+
   });
 }
 

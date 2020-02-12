@@ -25,26 +25,30 @@
       //Goes through all the p tags found and replace with the images of dog or cat
       for (var i = 0; i < pTags.length; i++) {
         //Find and replace the word "dog" with the image tag string
-        pTags[i].innerHTML = pTags[i].innerHTML.replace(/dog/gi, dogString);
+        pTags[i].innerHTML = pTags[i].innerHTML.replace(/dog(?!.svg)/gi, dogString);
       }
     }
     else if(petName === "Cat"){
       //Goes through all the p tags found and replace with the images of dog or cat
       for (var i = 0; i < pTags.length; i++) {
         //Find and replace the word "dog" with the image tag string
-        pTags[i].innerHTML = pTags[i].innerHTML.replace(/cat/gi, catString);
+        pTags[i].innerHTML = pTags[i].innerHTML.replace(/cat(?!.svg)/gi, catString);
       }
     }
   }
+
+  function removePets (dogURL, catURL){
+
+  }
+
 
 
    browser.runtime.onMessage.addListener((message) => {
     if (message.command === "petify") {
       insertPet(message.petURL, message.petName);
+    }else if (message.command === "reset") {
+      removePets(message.dogURL, message.catURL);
     }
   });
-
-
-
 
 })();
