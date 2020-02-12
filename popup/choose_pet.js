@@ -7,10 +7,10 @@ function listenForClicks() {
   document.addEventListener("click", (e) => {
 
     /**
-     * Given the name of a beast, get the URL to the corresponding image.
+     * Given the name of a pet, get the URL to the corresponding image.
      */
-    function petNameToURL(beastName) {
-      switch (beastName) {
+    function petNameToURL(petName) {
+      switch (petName) {
         case "Cat":
           return browser.extension.getURL("images/cat.svg");
         case "Dog":
@@ -20,14 +20,16 @@ function listenForClicks() {
 
     /**
      * Insert the page-hiding CSS into the active tab,
-     * then get the beast URL and
+     * then get the pet URL and
      * send a "petify" message to the content script in the active tab.
      */
     function petify(tabs) {
         let url = petNameToURL(e.target.textContent);
         browser.tabs.sendMessage(tabs[0].id, {
           command: "petify",
-          petURL: url
+          petURL: url,
+          petName: e.target.textContent
+
         });
     }
 
