@@ -38,7 +38,7 @@
   }
 
   function removePets (dogURL, catURL){
-
+     window.location.reload(true);
   }
 
 
