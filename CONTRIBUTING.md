@@ -10,5 +10,3 @@ Code style should follow the style used in the existing files.
 ## Licensing
 This extension is licensed under GNU General Public License v3.0
 
-## Images
-SVG images gotten from https://thenounproject.com/
