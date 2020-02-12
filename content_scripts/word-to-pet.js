@@ -1,3 +1,21 @@
+
+var pTags = document.getElementsByTagName("p");
+
+//New strings for the image tags
+var dogString = "<img src='" + browser.extension.getURL("../images/dog.svg") + "' width='25px' height='25px' alt='dog'/>";
+var catString = "<img src='" + browser.extension.getURL("../images/cat.svg") + "' width='25px' height='25px' alt='cat'/>";
+
+//Goes through all the p tags found and replace with the images of dog or cat
+for (var i = 0; i < pTags.length; i++) {
+  var words = pTags[i].innerHTML;
+  //Find and replace the word "dog" with the image tag string
+  var newText = words.replace(/dog/gi, dogString);
+  pTags[i].innerHTML = newText;
+  //Now do the same, but another pass-through to check for cats
+  pTags[i].innerHTML = pTags[i].innerHTML.replace(/cat/gi, catString);
+}
+
+
 (function() {
   /**
    * Check and set a global guard variable.
@@ -27,5 +45,8 @@
       removeExistingBeasts();
     }*/
   });
+
+
+
 
 })();

@@ -21,7 +21,7 @@ function listenForClicks() {
     /**
      * Insert the page-hiding CSS into the active tab,
      * then get the beast URL and
-     * send a "beastify" message to the content script in the active tab.
+     * send a "petify" message to the content script in the active tab.
      */
     function petify(tabs) {
         let url = petNameToURL(e.target.textContent);
@@ -40,7 +40,7 @@ function listenForClicks() {
 
     /**
      * Get the active tab,
-     * then call "beastify()" or "reset()" as appropriate.
+     * then call "petify()" or "reset()" as appropriate.
      */
     if (e.target.classList.contains("pet")) {
       browser.tabs.query({active: true, currentWindow: true})
